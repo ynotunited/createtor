@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useRouter, type ErrorComponentProps } from "@tanstack/react-router";
 
 import { describeUserError } from "@/lib/errors";
-import { reportLovableError } from "@/lib/lovable-error-reporting";
 import { reportClientError } from "@/lib/observability.functions";
 
 type AppErrorStateProps = {
@@ -107,7 +106,6 @@ export function RouteErrorComponent({ error, reset }: ErrorComponentProps) {
   const router = useRouter();
 
   useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
     const message = error instanceof Error ? error.message : String(error);
     reportClientError({
       data: {

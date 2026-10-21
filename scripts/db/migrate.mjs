@@ -18,7 +18,7 @@
 // Flags
 //   --on-fail-rollback   if a migration fails, run its .down.sql immediately
 //
-// Connection (in order): MIGRATION_DATABASE_URL, LOVABLE_DB_MIGRATION_URL.
+// Connection: MIGRATION_DATABASE_URL (see docs/migrations.md).
 // Never run this against production first: run it on staging (see docs/migrations.md).
 
 import { createHash } from "node:crypto";
@@ -47,10 +47,10 @@ function fail(message) {
 }
 
 function requireConnectionString() {
-  const url = process.env["MIGRATION_DATABASE_URL"] ?? process.env["LOVABLE_DB_MIGRATION_URL"];
+  const url = process.env["MIGRATION_DATABASE_URL"];
   if (!url) {
     fail(
-      "no connection string. Set MIGRATION_DATABASE_URL (or LOVABLE_DB_MIGRATION_URL) " +
+      "no connection string. Set MIGRATION_DATABASE_URL " +
         "to the staging/production Postgres URI.",
     );
   }

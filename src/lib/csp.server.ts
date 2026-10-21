@@ -26,16 +26,8 @@ export type CspInput = {
 
 const TURNSTILE = "https://challenges.cloudflare.com";
 
-/** Lovable preview zones the app is embedded in during development. */
-const FRAME_ANCESTORS = [
-  "'self'",
-  "https://*.lovable.dev",
-  "https://*.lovableproject.com",
-  "https://*.lovableproject-dev.com",
-  "https://*.lovable.app",
-  "https://*.gpt-eng.com",
-  "https://*.gptengineer.run",
-];
+/** The app is never embedded in a third-party frame; only same-origin. */
+const FRAME_ANCESTORS = ["'self'"];
 
 /**
  * Routes where an external script (Turnstile) is required. Kept as an explicit

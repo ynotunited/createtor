@@ -60,10 +60,9 @@ describe("buildCsp", () => {
     expect(csp).toContain("default-src 'self'");
   });
 
-  it("keeps the Lovable preview frame-ancestors allowlist", () => {
-    expect(buildCsp({ pathname: "/", env })).toContain(
-      "frame-ancestors 'self' https://*.lovable.dev",
-    );
+  it("restricts frame-ancestors to same-origin", () => {
+    expect(buildCsp({ pathname: "/", env })).toContain("frame-ancestors 'self'");
+    expect(buildCsp({ pathname: "/", env })).not.toContain("lovable");
   });
 
   it("registers the report endpoint", () => {

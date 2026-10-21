@@ -112,9 +112,7 @@ function allowed(relativePath, rule) {
   return ALLOWLIST.some((entry) => normalized.endsWith(entry.path) && entry.rule === rule);
 }
 
-const roots = ["src", "public", "docs", "supabase", ".github", ".lovable"].map((dir) =>
-  join(ROOT, dir),
-);
+const roots = ["src", "public", "docs", "supabase", ".github"].map((dir) => join(ROOT, dir));
 roots.push(join(ROOT, CLIENT_BUNDLE)); // no-op if the build has not run yet
 roots.push(ROOT); // root-level config files (depth-limited below)
 

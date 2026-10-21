@@ -1,29 +1,40 @@
-# Welcome to your Lovable project
+# Createtor
 
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+AI video creation platform: scripting, storyboarding, voiceover, and rendering
+for creators and small businesses.
 
 ## Development
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+You need Node.js (v22+) and npm.
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
 npm i
-npm run dev
+cp .env.example .env   # then fill in the values
+npm run dev            # http://localhost:8080
 ```
 
-## Built with
+Stop the dev server before running `npm run build` (the dev client bundle and the
+production build share `.output/`).
 
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
+## Verification
+
+```sh
+npm run check   # typecheck, lint, tests, build, a11y, e2e, scans
+```
+
+Individual steps: `npm run typecheck`, `npm run lint`, `npm run test`,
+`npm run build`, `npm run test:a11y`, `npm run test:e2e`.
+
+## Stack
+
+- TanStack Start (Vite + Nitro, Cloudflare target)
+- TypeScript, React 19, Tailwind CSS v4
+- Supabase (Postgres, Auth, Storage)
+- Drizzle migrations under `drizzle/` (see `docs/migrations.md`)
+
+## Docs
+
+- `docs/migrations.md` - applying database migrations
+- `docs/data-map.md` - data cascade and retention model
+- `docs/oauth-hardening.md` - Google sign-in hardening checklist
+- `docs/third-party-scripts.md` - external scripts and CSP

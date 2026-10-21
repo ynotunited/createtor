@@ -5,13 +5,13 @@
 // failure, so it can gate a pipeline.
 //
 // Usage: node scripts/db/verify.mjs
-// Connection: MIGRATION_DATABASE_URL, or LOVABLE_DB_MIGRATION_URL.
+// Connection: MIGRATION_DATABASE_URL.
 
 import postgres from "postgres";
 
-const url = process.env["MIGRATION_DATABASE_URL"] ?? process.env["LOVABLE_DB_MIGRATION_URL"];
+const url = process.env["MIGRATION_DATABASE_URL"];
 if (!url) {
-  console.error("verify: set MIGRATION_DATABASE_URL (or LOVABLE_DB_MIGRATION_URL).");
+  console.error("verify: set MIGRATION_DATABASE_URL.");
   process.exit(1);
 }
 

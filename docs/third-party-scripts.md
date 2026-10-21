@@ -14,7 +14,6 @@ third-party surface grows without a deliberate decision.
 | `VITE_SUPABASE_URL` (`*.supabase.co`)    | Supabase Auth/PostgREST/Storage from the browser            | **Browser** (every dashboard page)          | `src/integrations/supabase/client.ts`                                  |
 | `checkout.stripe.com` / PayPal hosted    | Hosted checkout / approval                                  | **Browser** (full-page redirect, no script) | `src/routes/_dash/billing.tsx`                                         |
 | `accounts.google.com`                    | Google OAuth (via Supabase)                                 | **Browser** (full-page redirect)            | `src/routes/auth.tsx`                                                  |
-| `oauth.lovable.app`                      | Lovable preview OAuth broker `postMessage` (preview only)   | **Browser** (`postMessage`, no script)      | `src/integrations/supabase/previewAuthStorage.ts`                      |
 | Media rows (`*.supabase.co` or uploaded) | Video/audio/captions fetched with `crossOrigin="anonymous"` | **Browser**                                 | `src/components/studio/renderer.ts`                                    |
 
 Server-only hosts the browser never reaches (SSR / Worker): `generativelanguage.googleapis.com`,
@@ -55,8 +54,8 @@ Built per-request in `src/lib/csp.server.ts` and attached to every response in
   `data:`/`blob:` for generated media.
 - `style-src 'self' 'unsafe-inline'` (React inline style props and the chart
   component emit inline CSS).
-- `frame-ancestors` keeps the Lovable preview allowlist (this is why the app can
-  be embedded in the Lovable editor but nowhere else).
+- `frame-ancestors 'self'` prevents the app from being embedded in any
+  third-party frame.
 - Violations are reported to `/api/csp-report`, which logs a bounded summary as a
   security event.
 

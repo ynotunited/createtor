@@ -41,12 +41,12 @@ From then on, `apply` only runs 0022 and later.
 
 ## Environment variables
 
-| Variable                                                 | Purpose                                                     |
-| -------------------------------------------------------- | ----------------------------------------------------------- |
-| `MIGRATION_DATABASE_URL` (or `LOVABLE_DB_MIGRATION_URL`) | The database `migrate.mjs` / `verify.mjs` connect to        |
-| `LIVE_DATABASE_URL`                                      | Production URI; read by the clone script                    |
-| `STAGING_DATABASE_URL`                                   | Staging URI; read by the clone script                       |
-| `PGBIN`                                                  | Directory with `pg_dump` / `pg_restore` / `psql` (optional) |
+| Variable                 | Purpose                                                     |
+| ------------------------ | ----------------------------------------------------------- |
+| `MIGRATION_DATABASE_URL` | The database `migrate.mjs` / `verify.mjs` connect to        |
+| `LIVE_DATABASE_URL`      | Production URI; read by the clone script                    |
+| `STAGING_DATABASE_URL`   | Staging URI; read by the clone script                       |
+| `PGBIN`                  | Directory with `pg_dump` / `pg_restore` / `psql` (optional) |
 
 Credentials are never printed; the tools log only host + database name.
 
@@ -140,13 +140,13 @@ Two data-protection controls ship with 0026:
   and a `pg_cron` schedule (or a documented external-cron fallback when
   `pg_cron` is unavailable):
 
-  | Table               | Purge function             | Window | Schedule            |
-  | ------------------- | -------------------------- | ------ | ------------------- |
-  | `rate_limits`       | `purge_rate_limits`        | 1 h    | hourly (0016)       |
-  | `security_events`   | `purge_security_events`    | 90 d   | daily (0016)        |
-  | `error_issues`      | `purge_error_issues`       | 180 d  | weekly (0026)       |
-  | `analytics_events`  | `purge_analytics_events`   | 400 d  | monthly (0026)      |
-  | `audit_logs`        | `purge_audit_logs`         | 365 d  | daily (0026)        |
+  | Table              | Purge function           | Window | Schedule       |
+  | ------------------ | ------------------------ | ------ | -------------- |
+  | `rate_limits`      | `purge_rate_limits`      | 1 h    | hourly (0016)  |
+  | `security_events`  | `purge_security_events`  | 90 d   | daily (0016)   |
+  | `error_issues`     | `purge_error_issues`     | 180 d  | weekly (0026)  |
+  | `analytics_events` | `purge_analytics_events` | 400 d  | monthly (0026) |
+  | `audit_logs`       | `purge_audit_logs`       | 365 d  | daily (0026)   |
 
   All purge functions are service-role only and refuse a non-positive window.
 
