@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Offline · Createtor</title>
+    <style>
+      :root {
+        --oxblood: #710000;
+        --forge: #a63c06;
+        --gold: #eeba0b;
+        --sand: #f3e9df;
+        --ink: #1f1512;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      body {
+        display: grid;
+        place-items: center;
+        padding: 24px;
+        background: var(--sand);
+        color: var(--ink);
+        font-family:
+          "Inter",
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          sans-serif;
+      }
+      .card {
+        width: 100%;
+        max-width: 26rem;
+        text-align: center;
+      }
+      .mark {
+        display: inline-grid;
+        place-items: center;
+        width: 56px;
+        height: 56px;
+        border-radius: 16px;
+        background: var(--oxblood);
+        color: #fff;
+        margin: 0 auto 20px;
+      }
+      h1 {
+        margin: 0 0 8px;
+        font-size: 1.5rem;
+        letter-spacing: -0.01em;
+      }
+      p {
+        margin: 0 0 24px;
+        color: rgb(31 21 18 / 0.66);
+        line-height: 1.6;
+      }
+      button {
+        appearance: none;
+        border: 0;
+        border-radius: 10px;
+        background: var(--gold);
+        color: var(--ink);
+        font: inherit;
+        font-weight: 700;
+        padding: 12px 22px;
+        cursor: pointer;
+        transition:
+          transform 150ms ease,
+          background-color 150ms ease;
+      }
+      button:hover {
+        background: #f4e409;
+      }
+      button:active {
+        transform: scale(0.97);
+      }
+      .status {
+        margin-top: 16px;
+        font-size: 0.8rem;
+        color: rgb(31 21 18 / 0.5);
+      }
+      @media (prefers-reduced-motion: reduce) {
+        button {
+          transition: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="card">
+      <span class="mark" aria-hidden="true">
+        <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+          <path d="M16 6 9 26M16 6 23 26" stroke="#fff" stroke-width="3.5" stroke-linecap="round" />
+          <path d="M12 15 18 19 12 23Z" fill="#fff" />
+        </svg>
+      </span>
+      <h1>You're offline</h1>
+      <p>
+        Createtor needs a connection to load your workspace. Reconnect and we'll pick up right where
+        you left off — nothing you entered is lost.
+      </p>
+      <button type="button" onclick="window.location.reload()">Try again</button>
+      <p class="status" id="status">Waiting for a connection…</p>
+    </main>
+    <script>
+      window.addEventListener("online", function () {
+        document.getElementById("status").textContent = "Back online — reloading…";
+        window.location.reload();
+      });
+    </script>
+  </body>
+</html>

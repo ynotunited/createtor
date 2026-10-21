@@ -1,0 +1,1 @@
+CREATE POLICY "owner reads workspace" ON public.workspaces FOR SELECT TO authenticated USING (owner_id = auth.uid());

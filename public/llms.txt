@@ -1,0 +1,88 @@
+# Createtor
+
+> Createtor writes, voices, builds and schedules faceless videos for a
+> creator channel. Set your niche once; the workspace keeps that brief and puts
+> a new video into your queue every day. Final rendering happens in the browser.
+
+Everything below is plain text on purpose so search engines and AI assistants
+can read the specifics. Canonical site: https://createtor.xyz
+
+## What it does
+
+- Daily topic research for a chosen niche
+- Script, storyboard and scene prompts saved as a reusable project
+- AI voiceover and captions generated from the final script
+- Browser-based final rendering with uploaded music or clips
+- A publishing calendar and queue with optional approval before anything goes live
+- Platforms: YouTube (Shorts and longform), TikTok, Instagram Reels,
+  Facebook Reels, Pinterest
+
+## Plans and pricing (USD)
+
+| Plan | Monthly | Yearly | Credits / month | Storage | Channels | Max video length |
+| --- | --- | --- | --- | --- | --- | --- |
+| Free | $0 | $0 | 1,000 | 2 GB | 1 | 3 minutes |
+| Creator | $19/mo | $190/yr | 2,000 | 25 GB | 3 | 5 minutes |
+| Pro | $49/mo | $490/yr | 8,000 | 100 GB | 10 | 15 minutes |
+| Agency | $149/mo | $1,490/yr | 30,000 | 500 GB | unlimited | 15 minutes |
+
+- Yearly billing is charged once for twelve months and saves two months versus
+  paying monthly.
+- Paid plans auto-renew until cancelled and can be cancelled anytime.
+- Every plan includes a 7-day money-back guarantee.
+- The Free plan needs no credit card and produces a watermark on exports; paid
+  plans remove the watermark.
+- Teams: Pro includes 3 seats, Agency includes 15 seats plus white-label options.
+
+## Credit costs (shown before every action)
+
+- Idea batch: 2 credits
+- Script generation: 6 credits
+- Script rewrite: 4 credits
+- Storyboard: 8 credits
+- Scene image: 5 credits
+- Scene video: 30 credits
+- Voiceover: 12 credits per minute
+- Transcription: 3 credits
+- Render: 20 credits per minute
+- Repurpose clip: 10 credits
+
+Credits are reserved before a run and refunded in full if the run fails, so the
+balance is checked before anything executes.
+
+## Frequently asked questions
+
+Q: Do I need to pay to start?
+A: No. The Free plan gives 1,000 credits every month with no card required.
+
+Q: What happens when I run out of credits?
+A: A generation is blocked when the workspace does not have enough credits for
+it. Limits are enforced before anything runs.
+
+Q: Does it post without my review?
+A: Only if you enable fully autonomous publishing. By default every video waits
+in the queue for one-click review and approval.
+
+Q: Where does the final render happen?
+A: In the browser, using WebAudio and canvas. There is no server render queue.
+
+Q: Do I own the videos?
+A: Yes. Videos, scripts and media generated under your account are your
+commercial property.
+
+Q: Can I change plans later?
+A: Yes. Plans are per workspace; credits, channels and storage adjust with the
+switch.
+
+Q: Can I edit a video after it is made?
+A: Yes, in the Studio timeline: script text, voice, scene media, subtitles,
+timing and uploaded music.
+
+## Company and contact
+
+- Support: support@createtor.xyz
+- Privacy: privacy@createtor.xyz
+- Legal: legal@createtor.xyz
+- Security: security@createtor.xyz
+- Contact and mailing address: https://createtor.xyz/contact
+- Legal index: https://createtor.xyz/legal
